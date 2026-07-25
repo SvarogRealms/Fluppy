@@ -6,7 +6,7 @@
         {
             "label": "flappy",
             "type": "shell",
-            "command": "odin build . -out:fluppy.exe",
+            "command": "odin build . -out:fluppy.exe -vet-style",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
