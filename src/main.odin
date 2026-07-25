@@ -22,6 +22,6 @@ main :: proc() {
         defer rl.EndDrawing()
 
         rl.ClearBackground(rl.RAYWHITE)
-        rl.DrawText("Hello, World!", 190, 200, 20, rl.LIGHTGRAY)
+        rl.DrawText("Hello, World!", 190, 200, 20, rl.BLACK)
     }
 }

@@ -7,6 +7,9 @@
             "label": "flappy",
             "type": "shell",
             "command": "odin build . -out:fluppy.exe -vet-style",
+             "options": {
+                "cwd": "${workspaceFolder}/src" 
+            },
             "problemMatcher": [],
             "group": {
                 "kind": "build",

@@ -5,10 +5,12 @@
             "name": "Odin: Launch & Debug",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/fluppy.exe",
+            "program": "${workspaceFolder}/src/fluppy.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "integratedTerminal",
-            "
+        }
+    ]
+}
