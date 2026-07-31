@@ -4,17 +4,45 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "flappy",
+            "label": "build game (hot reload)",
             "type": "shell",
-            "command": "odin build . -out:fluppy.exe -vet-style",
-             "options": {
-                "cwd": "${workspaceFolder}/src" 
+            "command": "odin build game -build-mode:dll -out:game.dll -define:RAYLIB_SHARED=true -vet-style -debug -error-pos-style=unix",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
             },
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "build hot reload host",
+            "type": "shell",
+            "command": "odin build main_hot_reload -out:fluppy_hot_reload.exe -vet-style -debug -error-pos-style=unix",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run hot reload",
+            "type": "shell",
+            "command": "./fluppy_hot_reload.exe",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "dependsOn": ["build game (hot reload)", "build hot reload host"],
+            "problemMatcher": []
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "odin build main_release -out:fluppy.exe -vet-style -o:speed -error-pos-style=unix",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "problemMatcher": []
         }
     ]
 }

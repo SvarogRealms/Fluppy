@@ -1,0 +1,7 @@
+src/*.exe
+src/*.pdb
+src/*.dll
+src/*.lib
+src/*.exp
+# raylib's runtime dll must ship next to the built exes for hot reload to work
+!src/raylib.dll
